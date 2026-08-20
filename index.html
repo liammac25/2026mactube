@@ -870,10 +870,15 @@
       lucide.createIcons();
     }
 
-    function closePremiumModal() {
-      const modal = document.getElementById('premium-modal');
-      modal.classList.add('hidden');
-    }
+    function handlePurchaseWork() {
+    closePremiumModal();
+    showToast("Redirecting to Support", "Opening MacTube Buy Me a Coffee page...", "sparkles");
+    
+    // Smoothly redirect them to your Buy Me a Coffee profile in a new tab
+    setTimeout(() => {
+        window.open("https://buymeacoffee.com", "_blank", "noopener,noreferrer");
+    }, 1000); // 1-second delay so they can read your sleek toast message first!
+}
 
     function handlePurchaseMock() {
       closePremiumModal();
